@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514064600) do
+ActiveRecord::Schema.define(version: 20160514064819) do
 
   create_table "deai_users", force: :cascade do |t|
     t.string   "name",       null: false
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20160514064600) do
     t.text     "value",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.string   "content",       null: false
+    t.boolean  "is_guching",    null: false
+    t.integer  "guchi_id",      null: false
+    t.integer  "guchi_user_id", null: false
+    t.integer  "deai_user_id",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "sexes", force: :cascade do |t|
