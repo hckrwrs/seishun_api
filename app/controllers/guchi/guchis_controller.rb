@@ -3,7 +3,7 @@ class Guchi::GuchisController < ApplicationController
   before_action :set_guchi, only: %i[show]
 
   def index
-    render_ok current_guchi_user.guchis
+    render_ok current_guchi_user.guchis.order('DESC')
   end
 
   def create
