@@ -4,6 +4,10 @@ Rails.application.routes.draw do
       post 'sign_in', action: :sign_in
       post 'sign_up', action: :sign_up
     end
+
+    namespace 'guchis' do
+      post '/', action: :index
+    end
   end
 
   namespace 'deai' do

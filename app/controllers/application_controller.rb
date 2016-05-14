@@ -66,17 +66,23 @@ class ApplicationController < ActionController::API
 
 
   def current_deai_user
-    @current_deai_user ||= User.find(session[:deai_user_id]) if session[:deai_user_id]
+    @current_deai_user ||= DeaiUser.find(session[:deai_user_id]) if session[:deai_user_id]
   end
   helper_method :current_deai_user
 
   def current_guchi_user
-    @current_guchi_user ||= User.find(session[:guchi_user_id]) if session[:guchi_user_id]
+    @current_guchi_user ||= GuchiUser.find(session[:guchi_user_id]) if session[:guchi_user_id]
   end
   helper_method :current_guchi_user
 
-  def authenticate_user!
-    if !current_user
+  def authenticate_guchi_user!
+    if !current_guchi_user
+      raise UnauthorizedError, "ログインして下さい"
+    end
+  end
+
+  def authenticate_deai_user!
+    if !current_deaii_user
       raise UnauthorizedError, "ログインして下さい"
     end
   end
