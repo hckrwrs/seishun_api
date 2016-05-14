@@ -11,18 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514063522) do
+ActiveRecord::Schema.define(version: 20160514064348) do
 
   create_table "guchi_users", force: :cascade do |t|
     t.string   "name",       null: false
-    t.integer  "icon_id"
-    t.integer  "sex_id"
+    t.integer  "icon_id",    null: false
+    t.integer  "sex_id",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "guchi_users", ["icon_id"], name: "index_guchi_users_on_icon_id"
   add_index "guchi_users", ["sex_id"], name: "index_guchi_users_on_sex_id"
+
+  create_table "guchis", force: :cascade do |t|
+    t.string   "content",       null: false
+    t.integer  "guchi_user_id", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "guchis", ["guchi_user_id"], name: "index_guchis_on_guchi_user_id"
 
   create_table "icons", force: :cascade do |t|
     t.string   "name",       null: false
