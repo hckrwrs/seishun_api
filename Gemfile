@@ -30,6 +30,8 @@ gem 'gimei' # for test mock
 # gem 'capistrano-rails', group: :development
 gem 'ransack'
 
+gem 'rack-cors', require: 'rack/cors'
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

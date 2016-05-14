@@ -25,6 +25,12 @@ module SeishunApi
     config.exceptions_app = -> (env) { ErrorsController.action(:show).(env) }
     config.middleware.use ActionDispatch::Cookies
 
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins /.*/
+        resource '*', headers: :any, methods: %i[post], credentials: true
+      end
+    end
 
     config.api_only = false
   end
