@@ -1,10 +1,17 @@
 namespace :dummy do
   desc 'dummy data'
   task create: :environment do
-    guchi = Gimei.male
-    GuchiUser.create! name: guchi.kanji, sex: Sex.find_by!(name: '男'), icon: Icon.all.sample
+    male = Sex.find_by!(name: '男')
+    female = Sex.find_by!(name: '女')
 
-    guchi = Gimei.female
-    GuchiUser.create! name: guchi.kanji, sex: Sex.find_by!(name: '女'), icon: Icon.all.sample
+    Icon.all.each do |icon|
+      name = Gimei.name
+      GuchiUser.create! name: name.first.katakana, sex: name.male? ? male : female, icon: icon
+    end
+
+    Icon.all.each do |icon|
+      name = Gimei.name
+      DeaiUser.create! name: name.first.katakana, sexes: [Sex.all.sample], icon: icon
+    end
   end
 end
