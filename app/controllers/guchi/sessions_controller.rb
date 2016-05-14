@@ -1,9 +1,11 @@
 class Guchi::SessionsController < ApplicationController
+  before_action :reset_session, only: :sign_in
+
   def sign_in
     name = params.require(:name)
     user = GuchiUser.find_by!(name: name)
 
-    session[:user_id] = user.id
+    session[:guchi_user_id] = user.id
 
     render_ok user
   end

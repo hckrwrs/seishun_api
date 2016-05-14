@@ -1,4 +1,6 @@
 class Deai::SessionsController < ApplicationController
+  before_action :reset_session, only: :sign_in
+
   def sign_in
     name = params.require(:name)
     user = DeaiUser.find_by!(name: name)
