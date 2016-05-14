@@ -13,5 +13,10 @@ namespace :dummy do
       name = Gimei.name
       DeaiUser.create! name: name.first.katakana, sexes: [Sex.all.sample], icon: icon
     end
+
+    GuchiUser.all.each do |user|
+      contents = ["鼻が詰まってつらい", "先輩ウザい", "恋人と喧嘩した><", "変な人ばっかでもうやだー", "もう人生嫌になった", "はー", "マジでダルい", "あーイヤになってくる"]
+      Guchi.create! guchi_user: user, content: contents.sample
+    end
   end
 end
