@@ -8,7 +8,7 @@ class Guchi::GuchisController < ApplicationController
 
   def create
     content = params.require(:content)
-    g = Guchi.create! content: content
+    render_ok Guchi.create! content: content, guchi_user_id: current_guchi_user.id
   end
 
   def replied
