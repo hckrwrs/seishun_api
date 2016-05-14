@@ -6,6 +6,9 @@ gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
+
+gem 'rails-api', '~> 0.4.0'
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers', ref: '61412d80cabc3900dfbd886bc3f25fb0e0d39433'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
