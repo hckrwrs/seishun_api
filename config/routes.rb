@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       post '/replied', action: :replied
       post '/:id', action: :show
     end
+
+    namespace 'replies' do
+      post '/create', action: :create
+    end
   end
 
   namespace 'deai' do
@@ -22,6 +26,10 @@ Rails.application.routes.draw do
       post '/', action: :index
       post '/replied', action: :replied
       post '/:id', action: :show
+    end
+
+    namespace 'replies' do
+      post '/create', action: :create
     end
   end
 
