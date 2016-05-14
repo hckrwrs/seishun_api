@@ -29,9 +29,12 @@ namespace :dummy do
       end
     end
 
-    DeaiUser.all.each do |user|
-      gu = GuchiUser.all.sample
-      Reply.create! guchi_user: gu, deai_user: user, guchi: gu.guchis.sample, content: 'だいじょうぶ?', is_guching: false
+    DeaiUser.all.each.with_index do |user, idx|
+      contents = ['だいじょうぶ?', '元気出して', '話聞こうか?', 'Hey!そこのカノジョ俺と話さないかい!']
+      gu = GuchiUser.find idx+1
+      gu.guchis.all.each do |guchi|
+        Reply.create! guchi_user: gu, deai_user: user, guchi: guchi, content: contents.sample, is_guching: false
+      end
     end
   end
 end
