@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   namespace 'guchi' do
-    post 'sessions/sign_in', action: :sign_in
-    post 'sessions/sign_up', action: :sign_in
+    namespace 'sessions' do
+      post 'sign_in', action: :sign_in
+      post 'sign_up', action: :sign_in
+    end
   end
 
   namespace 'deai' do
-    post 'sessions/sign_in', action: :sign_in
-    post 'sessions/sign_up', action: :sign_in
+    namespace 'sessions' do
+      post 'sign_in', action: :sign_in
+      post 'sign_up', action: :sign_in
+    end
   end
 end

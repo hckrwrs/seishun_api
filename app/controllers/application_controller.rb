@@ -56,21 +56,6 @@ class ApplicationController < ActionController::API
       json:     data,
       status:   status,
       meta_key: :request,
-      # XXX: 必要に応じて書き換える
-      include: ActiveModel::Serializer::IncludeTree.new(
-        '*': {},
-        unit: {
-          'customer': {},
-          'registered_by': {},
-        },
-        quotations: {
-          blueprint: {},
-        },
-        quotation_sheet: {
-          authorized_by: {},
-          quoted_by: {},
-        }
-      )
     }
     res[:serializer] = BlankSerializer if data.is_a?(Hash)
     res[:serializer] = serializer if serializer
@@ -88,7 +73,6 @@ class ApplicationController < ActionController::API
   def current_guchi_user
     @current_guchi_user ||= User.find(session[:guchi_user_id]) if session[:guchi_user_id]
   end
-  helper_method :current_deai_user
   helper_method :current_guchi_user
 
   def authenticate_user!
