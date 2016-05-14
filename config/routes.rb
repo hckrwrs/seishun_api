@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     namespace 'guchis' do
       post '/', action: :index
+      post '/create', action: :create
       post '/replied', action: :replied
       post '/:id', action: :show
     end
