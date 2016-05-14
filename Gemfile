@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'gimei' # for test mock
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -53,6 +54,5 @@ group :development do
   gem 'pry'
   gem "awesome_print"
   gem "pry-rails"
-  gem 'gimei' # for test mock
 end
 
