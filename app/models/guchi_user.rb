@@ -12,6 +12,7 @@
 # Indexes
 #
 #  index_guchi_users_on_icon_id  (icon_id)
+#  index_guchi_users_on_name     (name) UNIQUE
 #  index_guchi_users_on_sex_id   (sex_id)
 #
 

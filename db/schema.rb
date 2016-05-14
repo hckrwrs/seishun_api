@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514094355) do
+ActiveRecord::Schema.define(version: 20160514101237) do
 
   create_table "deai_user_sexes", force: :cascade do |t|
     t.integer  "deai_user_id", null: false
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160514094355) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "deai_users", ["name"], name: "index_deai_users_on_name", unique: true
+
   create_table "guchi_users", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "icon_id",    null: false
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160514094355) do
   end
 
   add_index "guchi_users", ["icon_id"], name: "index_guchi_users_on_icon_id"
+  add_index "guchi_users", ["name"], name: "index_guchi_users_on_name", unique: true
   add_index "guchi_users", ["sex_id"], name: "index_guchi_users_on_sex_id"
 
   create_table "guchis", force: :cascade do |t|

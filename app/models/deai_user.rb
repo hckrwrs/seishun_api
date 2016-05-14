@@ -8,6 +8,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_deai_users_on_name  (name) UNIQUE
+#
 
 class DeaiUser < ActiveRecord::Base
   belongs_to :icon
