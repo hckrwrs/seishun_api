@@ -16,5 +16,5 @@
 class Reply < ActiveRecord::Base
   belongs_to :guchi_user
   belongs_to :deai_user
-  belongs_to :guchis
+  belongs_to :guchi
 end

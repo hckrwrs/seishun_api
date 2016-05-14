@@ -82,7 +82,7 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate_deai_user!
-    if !current_deaii_user
+    if !current_deai_user
       raise UnauthorizedError, "ログインして下さい"
     end
   end

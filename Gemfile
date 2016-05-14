@@ -28,6 +28,7 @@ gem 'gimei' # for test mock
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'ransack'
 
 
 group :development do

@@ -15,6 +15,11 @@ Rails.application.routes.draw do
       post 'sign_in', action: :sign_in
       post 'sign_up', action: :sign_up
     end
+
+    namespace 'guchis' do
+      post '/', action: :index
+      post '/replied', action: :replied
+    end
   end
 
   post '/master_data', action: :index, controller: 'master_data'

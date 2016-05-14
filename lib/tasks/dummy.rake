@@ -20,5 +20,10 @@ namespace :dummy do
         Guchi.create! guchi_user: user, content: contents.sample
       end
     end
+
+    DeaiUser.all.each do |user|
+      gu = GuchiUser.all.sample
+      Reply.create! guchi_user: gu, deai_user: user, guchi: gu.guchis.sample, content: 'だいじょうぶ?', is_guching: false
+    end
   end
 end
