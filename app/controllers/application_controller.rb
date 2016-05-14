@@ -57,7 +57,7 @@ class ApplicationController < ActionController::API
       status:   status,
       meta_key: :request,
     }
-    res[:serializer] = BlankSerializer if data.is_a?(Hash)
+    # res[:serializer] = BlankSerializer if data.is_a?(Hash)
     res[:serializer] = serializer if serializer
     res[:each_serializer] = each_serializer if each_serializer
 

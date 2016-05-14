@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       post 'sign_up', action: :sign_up
     end
   end
+
+  post '/master_data', action: :index, controller: 'master_data'
 end
