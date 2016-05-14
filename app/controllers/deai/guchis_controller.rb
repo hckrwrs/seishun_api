@@ -7,6 +7,6 @@ class Deai::GuchisController < ApplicationController
   end
 
   def replied
-    render_ok current_deai_user.replies.map{|r| r.guchi}
+    render_ok current_deai_user.replies.map{|r| r.guchi}.uniq
   end
 end
