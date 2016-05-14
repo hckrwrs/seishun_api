@@ -7,7 +7,7 @@ class Deai::SessionsController < ApplicationController
 
     session[:deai_user_id] = user.id
 
-    render_ok user
+    render_ok user, serializer: DeaiUsersSerializer
   end
 
   def sign_up
@@ -17,6 +17,6 @@ class Deai::SessionsController < ApplicationController
 
     user = DeaiUser.create! name: name, icon_id: icon_id, sex_ids: sex_ids
     session[:deai_user_id] = user.id
-    render_ok user
+    render_ok user, serializer: DeaiUsersSerializer
   end
 end

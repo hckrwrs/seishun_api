@@ -1,3 +1,4 @@
 class DeaiUsersSerializer < ActiveModel::Serializer
-  attributes :id, :name, :icon_id
+  attributes :id, :name
+  belongs_to :icon
 end

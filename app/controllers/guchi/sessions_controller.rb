@@ -7,7 +7,7 @@ class Guchi::SessionsController < ApplicationController
 
     session[:guchi_user_id] = user.id
 
-    render_ok user
+    render_ok user, serializer: GuchiUsersSerializer
   end
 
   def sign_up
@@ -17,6 +17,6 @@ class Guchi::SessionsController < ApplicationController
 
     user = GuchiUser.create! name: name, icon_id: icon_id, sex_id: sex_id
     session[:guchi_user_id] = user.id
-    render_ok user
+    render_ok user, serializer: GuchiUsersSerializer
   end
 end
