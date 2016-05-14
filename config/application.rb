@@ -22,7 +22,10 @@ module SeishunApi
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.exceptions_app = -> (env) { ErrorsController.action(:show).(env) }
     config.middleware.use ActionDispatch::Cookies
+
+
     config.api_only = false
   end
 end
