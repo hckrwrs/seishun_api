@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Sex.find_or_create_by(name: '男')
+Sex.find_or_create_by(name: '女')
+
+Icon.find_or_create_by(name: '猫', value: "TODO")
