@@ -42,5 +42,6 @@ group :development do
   gem 'pry'
   gem "awesome_print"
   gem "pry-rails"
+  gem 'mi'
 end
 

@@ -10,6 +10,7 @@
 #  deai_user_id  :integer          not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  read          :boolean          default(FALSE), not null
 #
 
 class Reply < ActiveRecord::Base
