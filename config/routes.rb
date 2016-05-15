@@ -12,6 +12,10 @@ Rails.application.routes.draw do
       post '/:id', action: :show
     end
 
+    namespace 'deai_users' do
+      post '/:id', action: :show
+    end
+
     namespace 'replies' do
       post '/', action: :index
       post '/create', action: :create
@@ -27,6 +31,10 @@ Rails.application.routes.draw do
     namespace 'guchis' do
       post '/', action: :index
       post '/replied', action: :replied
+      post '/:id', action: :show
+    end
+
+    namespace 'guchi_users' do
       post '/:id', action: :show
     end
 
