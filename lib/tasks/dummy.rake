@@ -40,10 +40,10 @@ namespace :dummy do
 
   desc 'デモ用データ'
   task demo: :environment do
-    guchi_user = GuchiUser.create! name: "ユウ", sex_id: 2, icon: 6
+    guchi_user = GuchiUser.create! name: "ユウ", sex_id: 2, icon_id: 6
     ["彼氏と喧嘩した", "もう生きていけない", "死にたい", "つらい", "ε=(･д･`*) ﾊｰ", "人生終わった", "樹海に行きたい"].each do |content|
       Guchi.create! guchi_user: guchi_user, content: content
     end
-    DeaiUser.create! name: "ケンゴ", sex_id: 1, icon: 8
+    DeaiUser.create! name: "ケンゴ", sex_ids: [1,2], icon_id: 8
   end
 end
