@@ -4,7 +4,7 @@ class Deai::GuchisController < ApplicationController
 
   def index
     # XXX: なんかアルゴリズム実装する?
-    render_ok Guchi.search(replies_deai_user_id_not_eq: current_deai_user.id).result.sample(5)
+    render_ok Guchi.all.sample(5)
   end
 
   def replied
