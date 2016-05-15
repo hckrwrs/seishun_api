@@ -1,6 +1,14 @@
 class Guchi::RepliesController < ApplicationController
   before_action :authenticate_guchi_user!
 
+  def index
+    guchi_id = params.require(:guchi_id)
+    deai_user_id = params.require(:deai_usre_id)
+
+    replies = Reply.where(guchi_id: guchi_id, deai_user_id: deai_user_id)
+    render_ok replies
+  end
+
   def create
     guchi_id = params.require(:guchi_id)
     deai_user_id = params.require(:deai_user_id)

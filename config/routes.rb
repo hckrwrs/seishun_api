@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
 
     namespace 'replies' do
+      post '/', action: :index
       post '/create', action: :create
     end
   end
