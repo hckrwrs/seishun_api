@@ -3,7 +3,7 @@ class Guchi::RepliesController < ApplicationController
 
   def index
     guchi_id = params.require(:guchi_id)
-    deai_user_id = params.require(:deai_usre_id)
+    deai_user_id = params.require(:deai_user_id)
 
     replies = Reply.where(guchi_id: guchi_id, deai_user_id: deai_user_id)
     render_ok replies
