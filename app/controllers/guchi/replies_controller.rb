@@ -5,7 +5,7 @@ class Guchi::RepliesController < ApplicationController
     guchi_id = params.require(:guchi_id)
     deai_user_id = params.require(:deai_user_id)
 
-    replies = Reply.where(guchi_id: guchi_id, deai_user_id: deai_user_id)
+    replies = Reply.where(guchi_id: guchi_id, deai_user_id: deai_user_id).order(created_at: :desc)
     render_ok replies
   end
 

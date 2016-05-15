@@ -13,6 +13,6 @@ class Deai::RepliesController < ApplicationController
 
   def index
     guchi_id = params.require(:guchi_id)
-    render_ok Reply.where(guchi_id: guchi_id, deai_user_id: current_deai_user.id), each_serializer: RepliesSerializer
+    render_ok Reply.where(guchi_id: guchi_id, deai_user_id: current_deai_user.id).order(created_at: :desc), each_serializer: RepliesSerializer
   end
 end
